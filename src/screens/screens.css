@@ -1,0 +1,17 @@
+form {
+    background: #55acf3;
+    padding: 15em;
+    border-radius: 2em;
+    
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.error-message {
+    margin-top: 1em;
+    color: red;
+}
