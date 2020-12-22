@@ -6,6 +6,7 @@ export default function TodoForm() {
   const [todos, setTodos] = React.useState([]);
 
   const handleChange = e => {
+    console.log(e,'e',e.target.value,'target');
     setTodo(e.target.value);
   };
 
@@ -14,8 +15,7 @@ export default function TodoForm() {
       ...todos,
       {
         id: todos.length + 1,
-        text: todo,
-        completed: false
+        value: todo,
       }
     ]);
   };
@@ -29,15 +29,6 @@ export default function TodoForm() {
 
   const removeTodo = todoId => {
     const updatedTodos = todos.filter(todo => todo.id !== todoId);
-    setTodos(updatedTodos);
-  };
-
-  const toggleTodo = todoId => {
-    const updatedTodos = todos.map(todo => {
-      return todo.id === todoId
-        ? { ...todo, completed: !todo.completed }
-        : todo;
-    });
     setTodos(updatedTodos);
   };
 
@@ -60,15 +51,10 @@ export default function TodoForm() {
         <ul>
           {todos.map(todo => (
             <li key={todo.id}>
-              <span
-                className={todo.completed ? "todo-completed" : undefined}
-                onClick={() => toggleTodo(todo.id)}
-              >
-                {todo.text}
-              </span>
-              <span className="delete-btn" onClick={() => removeTodo(todo.id)}>
-                x
-              </span>
+                {todo.value}-
+              <button className="delete-btn" onClick={() => removeTodo(todo.id)}>
+                Delete
+              </button>
             </li>
           ))}
         </ul>

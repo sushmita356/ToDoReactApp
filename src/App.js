@@ -9,11 +9,15 @@ import{
   Route,
   Link
 } from 'react-router-dom';
+// import Example1 from './components/Simplehook';
+// import Objecthook from './components/Objecthook';
+import ArrayHook from './components/arrayHook';
 
 
 function App() {
   return (
     <div className="App">
+      <ArrayHook/>
       <Router>
           <Route path="/" exact>
             <Home />
