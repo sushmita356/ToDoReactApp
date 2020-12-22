@@ -1,17 +1,56 @@
 form {
-    background: #55acf3;
-    padding: 15em;
-    border-radius: 2em;
-    
+  background: #55acf3;
+  padding: 1.5em;
+  border-radius: 1em;
 }
 
 .center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .error-message {
-    margin-top: 1em;
-    color: red;
+  margin-top: 1em;
+  color: red;
+}
+
+
+body,
+* {
+  font-size: 24px;
+}
+
+label {
+  font-size: 16px;
+  margin-bottom: 0.5rem;
+}
+
+.container {
+  padding: 2rem;
+}
+
+.todo-input {
+  border-radius: 5px;
+  border: 2px solid #ddd;
+  box-shadow: 1px #777;
+}
+
+.todo-completed {
+  text-decoration: line-through;
+}
+
+.add-btn {
+  margin: 0 0.5rem;
+  background-color: mediumseagreen;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.delete-btn {
+  margin: 0 0.5rem;
+  cursor: pointer;
+  font-weight: bold;
+  color: red;
 }
