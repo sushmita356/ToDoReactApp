@@ -11,13 +11,14 @@ import{
 } from 'react-router-dom';
 // import Example1 from './components/Simplehook';
 // import Objecthook from './components/Objecthook';
-import ArrayHook from './components/arrayHook';
+// import ArrayHook from './components/arrayHook';
+import PrevState from './components/PrevState';
 
 
 function App() {
   return (
     <div className="App">
-      <ArrayHook/>
+      <PrevState/>
       <Router>
           <Route path="/" exact>
             <Home />
