@@ -1,10 +1,12 @@
-import React from "react";
+import React,{useState} from "react";
 import Toolbar from '../components/Toolbar/Toolbar';
 import './screens.css';
 
 export default function TodoForm() {
-  const [todo, setTodo] = React.useState("");
-  const [todos, setTodos] = React.useState([]);
+  const [todo, setTodo] = useState("");
+  const [todos, setTodos] = useState([]);
+  const [edit, setEdit] = useState(false);
+
 
   const handleChange = e => {
     console.log(e,'e',e.target.value,'target');
@@ -33,11 +35,15 @@ export default function TodoForm() {
     setTodos(updatedTodos);
   };
 
-  const EditTodo = todoId => {
-    const updatedTodos = todos.filter(todo => todo.id !== todoId);
-    setTodos(updatedTodos);
+  const handleEdit = (editId) => {
+    setEdit(!edit);
+    setTodos([
+      {
+        id: editId,
+        value: todo,
+      }
+    ]);
   };
-
 
   return (
     <div className="container">
@@ -63,7 +69,7 @@ export default function TodoForm() {
               <button className="delete-btn" onClick={() => removeTodo(todo.id)}>
                 Delete
               </button>
-              <button className="delete-btn" onClick={() => EditTodo(todo.id)}>
+              <button className="delete-btn" onClick={handleEdit}>
                 Edit
               </button>
 
