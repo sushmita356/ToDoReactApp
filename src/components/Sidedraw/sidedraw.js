@@ -1,14 +1,17 @@
 import React from 'react';
 import './sidedraw.css';
+import { Link } from 'react-router-dom';
+
 const sidedrawer = props =>(
 
     <nav className="side-draw">
         <ul>
             <li>
-                <a href="/">products</a>
+            <Link to="/products">Products</Link>
+ 
             </li>
             <li>
-                <a href="/">user</a>
+            <Link to="/user">User</Link>
             </li>
         </ul>
     </nav>

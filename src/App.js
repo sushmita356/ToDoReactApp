@@ -4,6 +4,7 @@ import TodoForm from './screens/TodoForm';
 import Home from './screens/Home';
 import About from './screens/About';
 import Contact from './screens/Contact';
+import Products from './screens/Products';
 import{
   BrowserRouter as Router,
   Route,
@@ -14,7 +15,7 @@ import{
 // import ArrayHook from './components/arrayHook';
 // import PrevState from './components/PrevState';
 // import LifeCycleMethod from './components/LifeCycleMethods';
-import SimplehookWithUseEffect from './components//SimplehookWithUseEffect';
+// import SimplehookWithUseEffect from './components//SimplehookWithUseEffect';
 
 
 function App() {
@@ -34,6 +35,10 @@ function App() {
           <Route path="/TodoForm" exact>
             <TodoForm/>
           </Route>
+          <Route path="/products" exact>
+            <Products/>
+          </Route>
+
 
         </Router>
 
