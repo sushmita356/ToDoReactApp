@@ -35,7 +35,7 @@ export default function TodoForm() {
   return (
     <div className="container">
       <Toolbar/>
-      <form onSubmit={onSubmit}>
+      <form onSubmit={onSubmit} className='todoForm'>
         <label htmlFor="todo">TODO</label>
         <br />
         <input

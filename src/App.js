@@ -20,7 +20,7 @@ import SimplehookWithUseEffect from './components//SimplehookWithUseEffect';
 function App() {
   return (
     <div className="App">
-      <SimplehookWithUseEffect/>
+      {/* <SimplehookWithUseEffect/> */}
       <Router>
           <Route path="/" exact>
             <Home />

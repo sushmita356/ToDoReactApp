@@ -54,3 +54,9 @@ label {
   font-weight: bold;
   color: red;
 }
+
+.todoForm{
+text-align: center;
+margin-top: 100px;
+
+}
