@@ -1,7 +1,7 @@
 import React from 'react';
 import Sidedraw from '../components/Sidedraw/sidedraw';
 import Toolbar from '../components/Toolbar/Toolbar';
-import Backdrop from '../components/Backdrop/Backdrop';
+// import Backdrop from '../components/Backdrop/Backdrop';
  class Home extends React.Component 
 {
     state = {
@@ -41,18 +41,18 @@ import Backdrop from '../components/Backdrop/Backdrop';
     //}
     render(){
         let sidedrawer;
-        let backdrop;
+        // let backdrop;
         if(this.state.sidedrwaeropen)
         {
             sidedrawer=  <Sidedraw/>;
-            backdrop=   <Backdrop/>
+            // backdrop=   <Backdrop/>
 
         }
         return(
             <div>
                 <Toolbar drawerclickhandler={this.drawerTogglleclickHandler} />
                 {sidedrawer}
-                {backdrop}
+                {/* {backdrop} */}
                 <p>{this.state.message}</p>
                 <p></p>
             <button onClick={this.Clicking.bind(this)}>click me</button>

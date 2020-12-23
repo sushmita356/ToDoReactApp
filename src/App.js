@@ -12,13 +12,15 @@ import{
 // import Example1 from './components/Simplehook';
 // import Objecthook from './components/Objecthook';
 // import ArrayHook from './components/arrayHook';
-import PrevState from './components/PrevState';
+// import PrevState from './components/PrevState';
+// import LifeCycleMethod from './components/LifeCycleMethods';
+import SimplehookWithUseEffect from './components//SimplehookWithUseEffect';
 
 
 function App() {
   return (
     <div className="App">
-      <PrevState/>
+      <SimplehookWithUseEffect/>
       <Router>
           <Route path="/" exact>
             <Home />
