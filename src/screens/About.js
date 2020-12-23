@@ -8,7 +8,6 @@ class about extends React.Component
             <div>
              <Toolbar/>  
              <p>this is paragarph</p> 
-             <p>paragarph</p>
             <button>click me</button>
             </div>
         );

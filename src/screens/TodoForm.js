@@ -33,6 +33,12 @@ export default function TodoForm() {
     setTodos(updatedTodos);
   };
 
+  const EditTodo = todoId => {
+    const updatedTodos = todos.filter(todo => todo.id !== todoId);
+    setTodos(updatedTodos);
+  };
+
+
   return (
     <div className="container">
       <Toolbar/>
@@ -57,6 +63,10 @@ export default function TodoForm() {
               <button className="delete-btn" onClick={() => removeTodo(todo.id)}>
                 Delete
               </button>
+              <button className="delete-btn" onClick={() => EditTodo(todo.id)}>
+                Edit
+              </button>
+
             </li>
           ))}
         </ul>
