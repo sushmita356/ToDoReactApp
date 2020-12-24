@@ -5,6 +5,8 @@ import Home from './screens/Home';
 import About from './screens/About';
 import Contact from './screens/Contact';
 import Products from './screens/Products';
+import Users from './screens/user';
+import TodoList from './screens/TodoList';
 import{
   BrowserRouter as Router,
   Route,
@@ -21,7 +23,7 @@ import{
 function App() {
   return (
     <div className="App">
-      {/* <SimplehookWithUseEffect/> */}
+      {/* <TodoList/> */}
       <Router>
           <Route path="/" exact>
             <Home />
@@ -33,11 +35,15 @@ function App() {
             <Contact/>
           </Route>
           <Route path="/TodoForm" exact>
-            <TodoForm/>
+            <TodoList/>
           </Route>
           <Route path="/products" exact>
             <Products/>
           </Route>
+          <Route path="/Users" exact>
+            <Users/>
+          </Route>
+
 
 
         </Router>

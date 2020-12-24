@@ -11,7 +11,7 @@ const sidedrawer = props =>(
  
             </li>
             <li>
-            <Link to="/user">User</Link>
+            <Link to="/Users">User</Link>
             </li>
         </ul>
     </nav>

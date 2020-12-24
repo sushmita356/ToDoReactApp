@@ -1,83 +1,36 @@
-import React,{useState} from "react";
-import Toolbar from '../components/Toolbar/Toolbar';
-import './screens.css';
+import React, { useState } from "react";
 
-export default function TodoForm() {
-  const [todo, setTodo] = useState("");
-  const [todos, setTodos] = useState([]);
-  const [edit, setEdit] = useState(false);
-
+function TodoForm(props) {
+  const [input, setInput] = useState(props.edit ? props.edit.value : "");
 
   const handleChange = e => {
-    console.log(e,'e',e.target.value,'target');
-    setTodo(e.target.value);
+    setInput(e.target.value);
   };
 
-  const addTodo = () => {
-    setTodos([
-      ...todos,
-      {
-        id: todos.length + 1,
-        value: todo,
-      }
-    ]);
-  };
-
-  const onSubmit = e => {
+  const handleSubmit = e => {
     e.preventDefault();
-    if (todo === "") return;
-    addTodo();
-    setTodo("");
-  };
 
-  const removeTodo = todoId => {
-    const updatedTodos = todos.filter(todo => todo.id !== todoId);
-    setTodos(updatedTodos);
-  };
-
-  const handleEdit = (editId) => {
-    setEdit(!edit);
-    setTodos([
-      {
-        id: editId,
-        value: todo,
-      }
-    ]);
+    props.onSubmit({
+      id: Math.floor(Math.random() * 10000),
+      text: input,
+      complete: false
+    });
+    setInput("");
   };
 
   return (
-    <div className="container">
-      <Toolbar/>
-      <form onSubmit={onSubmit} className='todoForm'>
-        <label htmlFor="todo">TODO</label>
-        <br />
-        <input
-          id="todo"
-          className="todo-input"
-          onChange={handleChange}
-          value={todo}
-        />
-        <button type="submit" className="add-btn">
-          Add
-        </button>
-      </form>
-      <div>
-        <ul>
-          {todos.map(todo => (
-            <li key={todo.id}>
-                {todo.value}-
-              <button className="delete-btn" onClick={() => removeTodo(todo.id)}>
-                Delete
-              </button>
-              <button className="delete-btn" onClick={handleEdit}>
-                Edit
-              </button>
-
-            </li>
-          ))}
-        </ul>
-      </div>
-
-    </div>
+    <form onSubmit={handleSubmit}>
+      <input
+        placeholder="todo..."
+        value={input}
+        onChange={handleChange}
+        name="text"
+      />
+      <button onClick={handleSubmit}>
+        {props.edit ? "update" : "add todo"}
+      </button>
+    </form>
   );
 }
+
+export default TodoForm;
