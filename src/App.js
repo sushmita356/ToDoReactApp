@@ -16,14 +16,14 @@ import{
 // import Objecthook from './components/Objecthook';
 // import ArrayHook from './components/arrayHook';
 // import PrevState from './components/PrevState';
-// import LifeCycleMethod from './components/LifeCycleMethods';
+import LifeCycleMethod from './components/LifeCycleMethods';
 // import SimplehookWithUseEffect from './components//SimplehookWithUseEffect';
 
 
 function App() {
   return (
     <div className="App">
-      {/* <TodoList/> */}
+      <LifeCycleMethod/>
       <Router>
           <Route path="/" exact>
             <Home />

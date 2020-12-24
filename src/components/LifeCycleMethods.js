@@ -28,7 +28,6 @@ class LifeCycleMethod extends Component{
     componentWillUnmount(){ ///
         console.log(' componentWillUnmount() executed');
     }
-
     render(){
         return(
             <div>
